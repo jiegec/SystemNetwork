@@ -9,7 +9,17 @@
         <customObject id="-2" userLabel="File's Owner" customClass="NSPreferencePane">
             <connections>
                 <outlet property="_window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
+                <outlet property="dnsTextField" destination="shF-jm-ceg" id="CfL-KN-gFi"/>
+                <outlet property="interfaceHardwareTextField" destination="k5S-7S-E7i" id="pN3-lx-5pZ"/>
+                <outlet property="interfaceNameTextField" destination="xUA-k6-U8X" id="NmF-g6-jai"/>
+                <outlet property="interfaceSubTypeTextField" destination="fcX-FG-nQU" id="4cw-ba-uLN"/>
+                <outlet property="interfaceTypeTextField" destination="Hoe-z4-5yB" id="Fqq-gB-jXK"/>
+                <outlet property="interfaceUserDefinedNameTextField" destination="hNz-xD-Xxc" id="0mx-Ve-cQB"/>
+                <outlet property="ipv4MethodTextField" destination="GnN-2d-As6" id="tY0-4e-O6q"/>
+                <outlet property="ipv6MethodTextField" destination="D6M-fz-vIv" id="Wm9-M9-0gZ"/>
                 <outlet property="networkServicesTableView" destination="tb1-P3-Dgp" id="NTZ-Gx-M2F"/>
+                <outlet property="userDefinedNameTextField" destination="nw1-7K-DgH" id="wEw-dn-fmR"/>
+                <outlet property="uuidTextField" destination="cZ3-Dd-7VJ" id="l8o-BJ-N4w"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
@@ -184,19 +194,19 @@
                                             </customSpacing>
                                         </stackView>
                                         <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" fixedFrame="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0GK-qZ-sJk">
-                                            <rect key="frame" x="176" y="278" width="446" height="22"/>
+                                            <rect key="frame" x="176" y="278" width="451" height="22"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3qo-XR-XmF">
-                                                    <rect key="frame" x="-2" y="3" width="118" height="17"/>
-                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Interface SubType:" id="Zbb-vQ-oHF">
+                                                    <rect key="frame" x="-2" y="3" width="123" height="17"/>
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Interface Sub Type:" id="Zbb-vQ-oHF">
                                                         <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
                                                 </textField>
                                                 <textField verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fcX-FG-nQU">
-                                                    <rect key="frame" x="122" y="0.0" width="324" height="22"/>
+                                                    <rect key="frame" x="127" y="0.0" width="324" height="22"/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="FHa-Cq-R48">
                                                         <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -381,6 +391,9 @@
                                                                 </prototypeCellViews>
                                                             </tableColumn>
                                                         </tableColumns>
+                                                        <connections>
+                                                            <action selector="onSelectNetworkAction:" target="-2" id="mfJ-UT-hXv"/>
+                                                        </connections>
                                                     </tableView>
                                                 </subviews>
                                             </clipView>

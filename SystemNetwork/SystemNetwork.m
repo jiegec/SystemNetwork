@@ -22,6 +22,22 @@ static NSString * CONFIG_PATH = @"/Library/Preferences/SystemConfiguration/prefe
     [[self networkServicesTableView] setDataSource:self];
 }
 
+- (IBAction)onSelectNetworkAction:(NSTableView *)sender {
+    NSInteger index = [sender clickedRow];
+    NSDictionary *services = [self config][@"NetworkServices"];
+    NSArray<NSString *> *keys = [services allKeys];
+    NSDictionary *service = services[keys[index]];
+    [[self uuidTextField] setStringValue:keys[index]];
+    [[self userDefinedNameTextField] setStringValue:service[@"UserDefinedName"]];
+    [[self interfaceNameTextField] setStringValue:service[@"Interface"][@"DeviceName"]];
+    [[self interfaceHardwareTextField] setStringValue:service[@"Interface"][@"Hardware"]];
+    [[self interfaceTypeTextField] setStringValue:service[@"Interface"][@"Type"]];
+    [[self interfaceSubTypeTextField] setStringValue:service[@"Interface"][@"SubType"]];
+    [[self interfaceUserDefinedNameTextField] setStringValue:service[@"Interface"][@"UserDefinedName"]];
+    [[self ipv4MethodTextField] setStringValue:service[@"IPv4"][@"ConfigMethod"]];
+    [[self ipv6MethodTextField] setStringValue:service[@"IPv6"][@"ConfigMethod"]];
+}
+
 
 #pragma mark -
 #pragma mark NSTableViewDataSource Implementation
@@ -41,9 +57,12 @@ static NSString * CONFIG_PATH = @"/Library/Preferences/SystemConfiguration/prefe
     NSTextField *textField = [[NSTextField alloc] init];
     [textField setEditable:NO];
     NSDictionary *services = [self config][@"NetworkServices"];
-    NSArray *keys = [services allKeys];
+    NSArray<NSString *> *keys = [services allKeys];
     [textField setStringValue:services[keys[row]][@"UserDefinedName"]];
-    
+    [textField setBordered:NO];
+    [textField setDrawsBackground:NO];
+    [textField setTag:row];
+
     return textField;
 }
 

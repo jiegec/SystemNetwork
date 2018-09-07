@@ -11,8 +11,19 @@
 @interface SystemNetwork : NSPreferencePane <NSTableViewDelegate, NSTableViewDataSource>
 
 - (void)mainViewDidLoad;
-@property (weak) IBOutlet NSTableView *networkServicesTableView;
+- (IBAction)onSelectNetworkAction:(NSTableView *)sender;
 
+@property (weak) IBOutlet NSTableView *networkServicesTableView;
 @property (strong) NSMutableDictionary *config;
+@property (weak) IBOutlet NSTextField *uuidTextField;
+@property (weak) IBOutlet NSTextField *userDefinedNameTextField;
+@property (weak) IBOutlet NSTextField *interfaceNameTextField;
+@property (weak) IBOutlet NSTextField *interfaceHardwareTextField;
+@property (weak) IBOutlet NSTextField *interfaceTypeTextField;
+@property (weak) IBOutlet NSTextField *interfaceSubTypeTextField;
+@property (weak) IBOutlet NSTextField *interfaceUserDefinedNameTextField;
+@property (weak) IBOutlet NSTextField *dnsTextField;
+@property (weak) IBOutlet NSTextField *ipv4MethodTextField;
+@property (weak) IBOutlet NSTextField *ipv6MethodTextField;
 
 @end
