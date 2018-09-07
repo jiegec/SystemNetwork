@@ -20,6 +20,7 @@
 		D0C325E62142F7EA00DF067A /* SystemNetwork.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = SystemNetwork.tiff; sourceTree = "<group>"; };
 		D0C325E92142F7EA00DF067A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SystemNetwork.xib; sourceTree = "<group>"; };
 		D0C325EB2142F7EA00DF067A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0C325F12142FEC600DF067A /* SystemNetwork-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SystemNetwork-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +58,7 @@
 				D0C325E62142F7EA00DF067A /* SystemNetwork.tiff */,
 				D0C325E82142F7EA00DF067A /* SystemNetwork.xib */,
 				D0C325EB2142F7EA00DF067A /* Info.plist */,
+				D0C325F12142FEC600DF067A /* SystemNetwork-Bridging-Header.h */,
 			);
 			path = SystemNetwork;
 			sourceTree = "<group>";
@@ -104,6 +106,7 @@
 				TargetAttributes = {
 					D0C325DE2142F7EA00DF067A = {
 						CreatedOnToolsVersion = 9.4;
+						LastSwiftMigration = 0940;
 					};
 				};
 			};
@@ -272,13 +275,22 @@
 		D0C325EF2142F7EA00DF067A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = LWANP9659G;
 				INFOPLIST_FILE = SystemNetwork/Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/PreferencePanes";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.jiegec.SystemNetwork;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SystemNetwork/SystemNetwork-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				WRAPPER_EXTENSION = prefPane;
 			};
 			name = Debug;
@@ -286,13 +298,21 @@
 		D0C325F02142F7EA00DF067A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = LWANP9659G;
 				INFOPLIST_FILE = SystemNetwork/Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/PreferencePanes";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.jiegec.SystemNetwork;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SystemNetwork/SystemNetwork-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				WRAPPER_EXTENSION = prefPane;
 			};
 			name = Release;

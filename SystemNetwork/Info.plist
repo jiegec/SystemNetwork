@@ -19,13 +19,13 @@
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2018 jiegec. All rights reserved.</string>
+	<string>Copyright © 2018 Jiajie Chen. All rights reserved.</string>
 	<key>NSMainNibFile</key>
 	<string>SystemNetwork</string>
 	<key>NSPrefPaneIconFile</key>
 	<string>SystemNetwork.tiff</string>
 	<key>NSPrefPaneIconLabel</key>
-	<string>SystemNetwork</string>
+	<string>System Network</string>
 	<key>NSPrincipalClass</key>
 	<string>SystemNetwork</string>
 </dict>
