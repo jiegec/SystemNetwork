@@ -392,7 +392,7 @@
                                                             </tableColumn>
                                                         </tableColumns>
                                                         <connections>
-                                                            <action selector="onSelectNetworkAction:" target="-2" id="mfJ-UT-hXv"/>
+                                                            <action selector="onSelectNetworkActionWithSender:" target="-2" id="W6d-T6-UPb"/>
                                                             <outlet property="dataSource" destination="-2" id="vb5-lM-tk4"/>
                                                             <outlet property="delegate" destination="-2" id="ona-tJ-YS1"/>
                                                         </connections>
