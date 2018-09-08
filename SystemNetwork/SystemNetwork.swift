@@ -23,6 +23,11 @@ class SystemNetwork: NSPreferencePane {
     @IBOutlet var ipv4MethodTextField: NSTextField!
     @IBOutlet var ipv6MethodTextField: NSTextField!
 
+    @IBOutlet var setsTableView: NSTableView!
+
+    @IBOutlet var computerNameTextField: NSTextField!
+    @IBOutlet var localhostNameTextField: NSTextField!
+
     var config: [String: Any]?
 
     let CONFIG_FILE = "/Library/Preferences/SystemConfiguration/preferences.plist"
@@ -42,6 +47,8 @@ class SystemNetwork: NSPreferencePane {
                 ) as? [String: Any]
 
             networkServicesTableView.reloadData()
+            computerNameTextField.stringValue = ((config?["System"] as? [String: Any])?["System"] as? [String: Any])?["ComputerName"] as? String ?? ""
+            localhostNameTextField.stringValue = (((config?["System"] as? [String: Any])?["Network"] as? [String: Any])?["HostNames"] as? [String: String])?["LocalHostName"] ?? ""
         } catch let error {
             print("Got error \(error)")
         }
@@ -74,13 +81,24 @@ class SystemNetwork: NSPreferencePane {
         let dns = (service["DNS"] as? [String: Any])?["ServerAddresses"] as? [String]
         dnsTextField.stringValue = dns?.joined(separator: ", ") ?? ""
     }
+
+    @IBAction func onSelectSetAction(sender _: NSTableView) {}
 }
 
 extension SystemNetwork: NSTableViewDataSource {
-    func numberOfRows(in _: NSTableView) -> Int {
-        guard let services = config?["NetworkServices"] else { return 0 }
-        guard let dict = services as? [String: Any] else { return 0 }
-        return dict.count
+    func numberOfRows(in tableView: NSTableView) -> Int {
+        switch tableView {
+        case networkServicesTableView:
+            guard let services = config?["NetworkServices"] else { return 0 }
+            guard let dict = services as? [String: Any] else { return 0 }
+            return dict.count
+        case setsTableView:
+            guard let services = config?["Sets"] else { return 0 }
+            guard let dict = services as? [String: Any] else { return 0 }
+            return dict.count
+        default:
+            return 0
+        }
     }
 }
 
@@ -90,23 +108,41 @@ extension SystemNetwork: NSTableViewDelegate {
         : Int)
         -> CGFloat { return 25 }
 
-    func tableView(_
+    func tableView(_ tableView
         : NSTableView, viewFor _
         : NSTableColumn?, row: Int)
         -> NSView? {
-        let textField = NSTextField()
-        textField.isEditable = false
+        switch tableView {
+        case networkServicesTableView:
+            let textField = NSTextField()
+            textField.isEditable = false
 
-        guard let services = config? ["NetworkServices"] else { return nil }
-        guard let dict = services as? [String: Any] else { return nil }
-        let keys = dict.keys.sorted()
+            guard let services = config? ["NetworkServices"] else { return nil }
+            guard let dict = services as? [String: Any] else { return nil }
+            let keys = dict.keys.sorted()
 
-        guard let service = dict[keys[row]] as? [String: Any] else { return nil }
-        textField.stringValue = service["UserDefinedName"] as! String
-        textField.isBordered = false
-        textField.drawsBackground = false
-        textField.tag = row
+            guard let service = dict[keys[row]] as? [String: Any] else { return nil }
+            textField.stringValue = service["UserDefinedName"] as! String
+            textField.isBordered = false
+            textField.drawsBackground = false
+            textField.tag = row
+            return textField
+        case setsTableView:
+            let textField = NSTextField()
+            textField.isEditable = false
 
-        return textField
+            guard let services = config? ["Sets"] else { return nil }
+            guard let dict = services as? [String: Any] else { return nil }
+            let keys = dict.keys.sorted()
+
+            guard let service = dict[keys[row]] as? [String: Any] else { return nil }
+            textField.stringValue = service["UserDefinedName"] as! String
+            textField.isBordered = false
+            textField.drawsBackground = false
+            textField.tag = row
+            return textField
+        default:
+            return nil
+        }
     }
 }
