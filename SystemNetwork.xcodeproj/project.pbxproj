@@ -7,20 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D0C325E32142F7EA00DF067A /* SystemNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = D0C325E22142F7EA00DF067A /* SystemNetwork.h */; };
-		D0C325E52142F7EA00DF067A /* SystemNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C325E42142F7EA00DF067A /* SystemNetwork.m */; };
 		D0C325E72142F7EA00DF067A /* SystemNetwork.tiff in Resources */ = {isa = PBXBuildFile; fileRef = D0C325E62142F7EA00DF067A /* SystemNetwork.tiff */; };
 		D0C325EA2142F7EA00DF067A /* SystemNetwork.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0C325E82142F7EA00DF067A /* SystemNetwork.xib */; };
+		D0C325F521437F3E00DF067A /* SystemNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C325F421437F3E00DF067A /* SystemNetwork.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D0C325DF2142F7EA00DF067A /* SystemNetwork.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SystemNetwork.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
-		D0C325E22142F7EA00DF067A /* SystemNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SystemNetwork.h; sourceTree = "<group>"; };
-		D0C325E42142F7EA00DF067A /* SystemNetwork.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SystemNetwork.m; sourceTree = "<group>"; };
 		D0C325E62142F7EA00DF067A /* SystemNetwork.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = SystemNetwork.tiff; sourceTree = "<group>"; };
 		D0C325E92142F7EA00DF067A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SystemNetwork.xib; sourceTree = "<group>"; };
 		D0C325EB2142F7EA00DF067A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0C325F12142FEC600DF067A /* SystemNetwork-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SystemNetwork-Bridging-Header.h"; sourceTree = "<group>"; };
+		D0C325F421437F3E00DF067A /* SystemNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemNetwork.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,8 +51,7 @@
 		D0C325E12142F7EA00DF067A /* SystemNetwork */ = {
 			isa = PBXGroup;
 			children = (
-				D0C325E22142F7EA00DF067A /* SystemNetwork.h */,
-				D0C325E42142F7EA00DF067A /* SystemNetwork.m */,
+				D0C325F421437F3E00DF067A /* SystemNetwork.swift */,
 				D0C325E62142F7EA00DF067A /* SystemNetwork.tiff */,
 				D0C325E82142F7EA00DF067A /* SystemNetwork.xib */,
 				D0C325EB2142F7EA00DF067A /* Info.plist */,
@@ -70,7 +67,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0C325E32142F7EA00DF067A /* SystemNetwork.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,7 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0C325E52142F7EA00DF067A /* SystemNetwork.m in Sources */,
+				D0C325F521437F3E00DF067A /* SystemNetwork.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +271,7 @@
 		D0C325EF2142F7EA00DF067A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -298,6 +295,7 @@
 		D0C325F02142F7EA00DF067A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;

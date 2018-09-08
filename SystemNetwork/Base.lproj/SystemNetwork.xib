@@ -6,7 +6,7 @@
         <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="NSPreferencePane">
+        <customObject id="-2" userLabel="File's Owner" customClass="SystemNetwork" customModule="SystemNetwork" customModuleProvider="target">
             <connections>
                 <outlet property="_window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
                 <outlet property="dnsTextField" destination="shF-jm-ceg" id="CfL-KN-gFi"/>
@@ -19,7 +19,7 @@
                 <outlet property="ipv6MethodTextField" destination="D6M-fz-vIv" id="Wm9-M9-0gZ"/>
                 <outlet property="networkServicesTableView" destination="tb1-P3-Dgp" id="NTZ-Gx-M2F"/>
                 <outlet property="userDefinedNameTextField" destination="nw1-7K-DgH" id="wEw-dn-fmR"/>
-                <outlet property="uuidTextField" destination="cZ3-Dd-7VJ" id="l8o-BJ-N4w"/>
+                <outlet property="uuidTextField" destination="cZ3-Dd-7VJ" id="eEB-EX-zkC"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
@@ -393,6 +393,8 @@
                                                         </tableColumns>
                                                         <connections>
                                                             <action selector="onSelectNetworkAction:" target="-2" id="mfJ-UT-hXv"/>
+                                                            <outlet property="dataSource" destination="-2" id="vb5-lM-tk4"/>
+                                                            <outlet property="delegate" destination="-2" id="ona-tJ-YS1"/>
                                                         </connections>
                                                     </tableView>
                                                 </subviews>
